@@ -1,6 +1,6 @@
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c \
@@ -12,25 +12,34 @@ SRC_BNS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlas
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 
+
 OBJ = $(SRC:.c=.o)
 
 OBJ_BNS = $(SRC_BNS:.c=.o)
 
+BONUS_FILE = .bonus
+
+
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	ar -rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $?
 
-bonus: $(OBJ) $(OBJ_BNS)
-	ar -rcs $(NAME) $(OBJ) $(OBJ_BNS)
+bonus: $(BONUS_FILE)
+
+$(BONUS_FILE): $(OBJ_BNS) $(OBJ)
+	ar -rcs $(NAME) $?
+	@touch $(BONUS_FILE)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(OBJ_BNS)
+	rm -rf $(OBJ) $(OBJ_BNS) $(BONUS_FILE)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re

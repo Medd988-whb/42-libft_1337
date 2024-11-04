@@ -6,7 +6,7 @@
 /*   By: mohaben- <mohaben-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:06:34 by mohaben-          #+#    #+#             */
-/*   Updated: 2024/10/30 16:18:10 by mohaben-         ###   ########.fr       */
+/*   Updated: 2024/10/31 10:20:22 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
-

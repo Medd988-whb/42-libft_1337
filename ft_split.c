@@ -6,7 +6,7 @@
 /*   By: mohaben- <mohaben-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:01:16 by mohaben-          #+#    #+#             */
-/*   Updated: 2024/10/29 13:59:36 by mohaben-         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:16:54 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	free_all(char	**res, int i)
 	while (i >= 0)
 	{
 		free(res[i]);
+		res[i] = NULL;
 		i--;
 	}
 	free(res);
@@ -63,7 +64,8 @@ static char	**ft_fill(char **arr, char const *s, char c)
 		if (arr[i] == NULL)
 		{
 			free_all(arr, i - 1);
-			return (NULL);
+			arr = NULL;
+			return (arr);
 		}
 		i++;
 	}
@@ -80,7 +82,8 @@ char	**ft_split(char const *s, char c)
 	arr = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
-	if (ft_fill(arr, s, c) == NULL)
+	arr = ft_fill(arr, s, c);
+	if (arr == NULL)
 		return (NULL);
 	return (arr);
 }

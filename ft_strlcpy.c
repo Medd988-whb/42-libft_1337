@@ -6,7 +6,7 @@
 /*   By: mohaben- <mohaben-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:41:18 by mohaben-          #+#    #+#             */
-/*   Updated: 2024/10/29 17:12:54 by mohaben-         ###   ########.fr       */
+/*   Updated: 2024/11/02 13:18:31 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	slen;
 
 	i = 0;
+	slen = ft_strlen(src);
 	if (!size)
-		return (ft_strlen(src));
+		return (slen);
 	while (src[i] != '\0' && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (ft_strlen(src));
+	return (slen);
 }
