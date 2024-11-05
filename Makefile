@@ -27,7 +27,7 @@ $(NAME): $(OBJ)
 
 bonus: $(BONUS_FILE)
 
-$(BONUS_FILE): $(OBJ_BNS) $(OBJ)
+$(BONUS_FILE): $(OBJ_BNS)
 	ar -rcs $(NAME) $?
 	@touch $(BONUS_FILE)
 
@@ -41,5 +41,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all bonus clean fclean re

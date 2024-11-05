@@ -6,11 +6,11 @@
 /*   By: mohaben- <mohaben-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:08:21 by mohaben-          #+#    #+#             */
-/*   Updated: 2024/10/25 15:26:20 by mohaben-         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:02:07 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
