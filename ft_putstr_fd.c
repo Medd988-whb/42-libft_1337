@@ -6,7 +6,7 @@
 /*   By: mohaben- <mohaben-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:28:10 by mohaben-          #+#    #+#             */
-/*   Updated: 2024/10/28 17:36:18 by mohaben-         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:35:35 by mohaben-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s == NULL)
+	if (fd < 0 || s == NULL)
 		return ;
 	write(fd, s, ft_strlen(s));
 }
