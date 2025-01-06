@@ -34,7 +34,7 @@
 
 ### 1. Clone the Repository  
 ```bash  
-git clone https://github.com/Redadaghouj/42-Libft_1337.git  
+git clone https://github.com/Medd988-whb/42-libft_1337.git Libft_1337
 cd Libft_1337  
 ```  
 
